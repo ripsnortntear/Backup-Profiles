@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Endwalker Fate Farming
+  Authors: DomesticWarlord86, nt153133
+-->
+
+<!DOCTYPE Profile [
+<!-- Select Zone To Farm -->
+<!ENTITY Thavnair "0"> 
+<!ENTITY Labyrinthos "0">
+<!ENTITY Garlemald "0">
+<!ENTITY MareLamentorum "0">
+<!ENTITY Elpis "0">
+<!ENTITY UltimaThule "0">
+
+]>
+
+
+<Profile>
+  <Name>Endwalker Fate Farming</Name>
+  <BehaviorDirectory></BehaviorDirectory>
+  <Order>
+
+	  
+	<If condition="&Thavnair; == 0 and &Labyrinthos; == 0 and &Garlemald; == 0 and &MareLamentorum; == 0 and &Elpis; == 0 and &UltimaThule; == 0">
+	  <LLToast message="Please open the profile and set a zone to 1."/>	
+	</If>	
+	  
+	<!-- Thavnair -->
+	<While Condition="&Thavnair; == 1">
+		<If condition="not AetherCurrentManager.IsZoneComplete(957)">
+			<If condition="not IsOnMap(957)">
+				<TeleportTo AetheryteId="170"/> <!-- The Great Work -->
+			</If>		
+			<Log Message="Starting Thavnair Fates without flight support." /> 
+			<While condition="IsOnMap(957)">
+				<LLFate UseFlight="True" MinLevel="0" MaxLevel="84" MinProgress="10" BlacklistIds="1772,1773,1774,1775,1776,1777,1778,1779" while="IsOnMap(957)"/>	
+			</While>
+		</If>
+		<If condition="AetherCurrentManager.IsZoneComplete(957)">
+			<If condition="not IsOnMap(957)">
+				<TeleportTo AetheryteId="170"/> <!-- The Great Work -->
+			</If>			
+			<Log Message="Starting Thavnair Fates with flight support." /> 
+			<While condition="IsOnMap(957)">
+				<LLFate UseFlight="True" MinLevel="0" MaxLevel="91" MinProgress="10" while="IsOnMap(957)"/>	
+			</While>
+		</If>		
+	</While>
+	<!--
+	Upper Zone:
+		ID: 1765 Type: Battle Fate: When Gaja Go Gaga 
+		ID: 1766 Type: Battle Fate: I Am the Valras 
+		ID: 1767 Type: Battle Fate: Shiver and Shock 
+		ID: 1769 Type: Boss Fate: The Accursed Kanabhuti 
+		ID: 1770 Type: ProtectNPC Fate: The Little Nanka That Could 
+		ID: 1771 Type: Battle Fate: Full Petal Alchemist: Risky Return 
+	
+	Lower Zone:
+		ID: 1773 Type: Battle Fate: Peek-a-Bhujamga 
+		ID: 1774 Type: Battle Fate: Stalkers in the Shroud 
+		ID: 1775 Type: Battle Fate: Swipe Eft 
+		ID: 1776 Type: Battle Fate: Mesmerizing Moths 
+		ID: 1777 Type: Boss Fate: Return of the Tyrant 
+		ID: 1778 Type: Battle Fate: Monkeys on Your Back 
+	
+	-->
+
+
+	<!-- Labyrinthos -->
+	<While Condition="&Labyrinthos; == 1">
+		<If condition="not AetherCurrentManager.IsZoneComplete(956)">
+			<If condition="not IsOnMap(956)">
+				<TeleportTo AetheryteId="166"/> <!-- The Archeion -->
+			</If>	
+			<Log Message="Starting Thavnair Fates without flight support." /> 
+			<While condition="IsOnMap(956)">
+				<LLFate UseFlight="True" MinLevel="0" MaxLevel="84" BlacklistIds="1751,1752,1753,1754,1755,1756,1757" while="IsOnMap(956)"/>	
+			</While>
+		</If>
+		<If condition="AetherCurrentManager.IsZoneComplete(956)">
+			<If condition="not IsOnMap(956)">
+				<TeleportTo AetheryteId="166"/> <!-- The Archeion -->
+			</If>		
+			<Log Message="Starting Thavnair Fates with flight support." /> 
+			<While condition="IsOnMap(956)">
+				<LLFate UseFlight="True" MinLevel="0" MaxLevel="91" BlacklistIds="1754" while="IsOnMap(956)"/>	
+			</While>
+		</If>		
+	</While>
+
+	
+	<!--
+	
+	Upper Zone:		
+		ID: 1744 Type: Boss Fate: Incident Files: Steamed Vegetable 
+		ID: 1745 Type: Battle Fate: Homecrawling 
+		ID: 1746 Type: Battle Fate: The Hills Are Alive 
+		ID: 1747 Type: Battle Fate: Bite the  
+		ID: 1748 Type: Battle Fate: Breakfast, Lunch, and Dinner 
+		ID: 1749 Type: Boss Fate: Let It Grow 
+		ID: 1750 Type: ProtectNPC Fate: Acid in Flight, Shepherd's Fright 
+		
+	Lower Zone:
+		ID: 1751 Type: Battle Fate: Incident Files: Elemental Attraction 
+		ID: 1752 Type: Battle Fate: Incident Files: Ice of the Tiger 
+		ID: 1753 Type: Battle Fate: Residual Complications 
+		ID: 1754 Type: KillHandIn Fate: Moisture Farming	
+		ID: 1755 Type: Battle Fate: Wasted XIV
+		ID: 1756 Type: Battle Fate: Empty the Nest 
+		ID: 1757 Type: Boss Fate: The Frailty of Life 
+
+	
+	-->
+	
+	<!-- Garlemald -->
+	<While Condition="&Garlemald; == 1">
+		<If condition="not AetherCurrentManager.IsZoneComplete(958)">
+			<If condition="not IsOnMap(958)">
+				<TeleportTo AetheryteId="172"/> <!-- Camp Broken Glass -->
+			</If>
+			<Log Message="Starting Garlemald Fates without flight support." /> 	
+			<While condition="IsOnMap(958)">
+				<LLFate UseFlight="True" MinLevel="0" MaxLevel="86" BlacklistIds="1798" while="IsOnMap(958)"/>	
+			</While>
+		</If>
+		<If condition="AetherCurrentManager.IsZoneComplete(958)">
+			<If condition="not IsOnMap(958)">
+				<TeleportTo AetheryteId="172"/> <!-- Camp Broken Glass -->
+			</If>
+			<Log Message="Starting Garlemald Fates with flight support." /> 	
+			<While condition="IsOnMap(958)">
+				<LLFate UseFlight="True" MinLevel="0" MaxLevel="91" BlacklistIds="1798" while="IsOnMap(958)"/>	
+			</While>
+		</If>	
+	</While>
+
+	
+	<!--
+	
+	ID: 1785 Type: Battle Fate: Trespassers Will Be Eaten 
+	ID: 1786 Type: Battle Fate: A Snowball's Chance 
+	ID: 1787 Type: Battle Fate: Not Yeti 
+	ID: 1788
+	ID: 1789 Type: Boss Fate: Roses Are Red, Violence Is Due 
+	ID: 1790 Type: ProtectNPC Fate: Amazing Crates 
+	ID: 1791
+	ID: 1792
+	ID: 1793 Type: Battle Fate: Rocker, Roller, Out-of-controller 
+	ID: 1794 Type: Battle Fate: Stray Dog Strut 
+	ID: 1796 Type: Battle Fate: A Bit of a Problem 
+	ID: 1797 Type: Boss Fate: The Man with the Golden Son 
+	ID: 1798 Type: KillHandIn Fate: Parts Unknown 
+
+
+	
+	-->
+	
+	<!-- Mare Lamentorum -->
+	<While Condition="&MareLamentorum; == 1">
+		<If condition="not AetherCurrentManager.IsZoneComplete(959)">
+			<If condition="not IsOnMap(959)">
+				<TeleportTo AetheryteId="174"/> <!-- Sinus Lacrimarum -->
+			</If>
+			<Log Message="Starting Mare Lamentorum Fates without flight support." /> 	
+			<While condition="IsOnMap(959)">
+				<LLFate UseFlight="True" MinLevel="0" MaxLevel="91" BlacklistIds="1831" while="IsOnMap(959)"/>	
+			</While>	
+		</If>
+		<If condition="AetherCurrentManager.IsZoneComplete(959)">
+			<If condition="not IsOnMap(959)">
+				<TeleportTo AetheryteId="174"/> <!-- Sinus Lacrimarum -->
+			</If>
+			<Log Message="Starting Mare Lamentorum Fates with flight support." /> 	
+			<While condition="IsOnMap(959)">
+				<LLFate UseFlight="True" MinLevel="0" MaxLevel="91" BlacklistIds="1831" while="IsOnMap(959)"/>	
+			</While>	
+		</If>	
+	</While>
+
+	
+<!--
+
+	ID: 1807 Type: Battle Fate: One Giant Weep 
+	ID: 1809 Type: Battle Fate: Droids Gone Wild 
+
+-->	
+	
+	
+	<!-- Elpis -->
+	<While Condition="&Elpis; == 1">
+		<If condition="not AetherCurrentManager.IsZoneComplete(961)">
+			<If condition="not IsOnMap(961)">
+				<TeleportTo AetheryteId="177"/> <!-- The Twelve Wonders -->
+			</If>
+			<Log Message="Starting Elpis Fates without flight support." /> 	
+			<While condition="IsOnMap(961)">
+				<LLFate UseFlight="True" MinProgress="10" MinLevel="0" MaxLevel="91" BlacklistIds="1831,1832,1833,1834,1835,1836,1837,1838" while="IsOnMap(961)"/>	
+			</While>
+		</If>
+		<If condition="AetherCurrentManager.IsZoneComplete(961)">
+			<If condition="not IsOnMap(961)">
+				<TeleportTo AetheryteId="177"/> <!-- The Twelve Wonders -->
+			</If>
+			<Log Message="Starting Elpis Fates with flight support." /> 	
+			<While condition="IsOnMap(961)">
+				<LLFate UseFlight="True" MinProgress="10" MinLevel="0" MaxLevel="91" BlacklistIds="1838" while="IsOnMap(961)"/>	
+			</While>
+		</If>		
+	</While>
+<!--
+First Aetheryte:
+ID: 1825 Type: Battle Fate: Ophion-mania 
+ID: 1826 Type: Boss Fate: The Rustling of Murderous Leaves 
+ID: 1829 Type: Battle Fate: Drawing the Thunderstroke 
+ID: 1830 Type: ProtectNPC Fate: Nature's Staunch Protector 
+
+Second Aetheryte:
+ID: 1824 Type: Boss Fate: Grand Designs: Io 
+ID: 1825 Type: Battle Fate: Ophion-mania
+ID: 1827 Type: Battle Fate: Butterfly Kisses of Death  
+ID: 1828 Type: Battle Fate: You Hurt My Researcher, Prepare to Die 
+
+Third Aetheryte:
+ID: 1831 Type: Battle Fate: Grand Designs: Unknown Execution 
+ID: 1834 Type: Battle Fate: King of the Hill  
+ID: 1835 Type: Battle Fate: Why Did It Have to Be Medusae? 
+ID: 1837 Type: Boss Fate: Eurydike: All Bark, No Bite 
+ID: 1836 Type: Battle Fate: There's a Snake in My Water Supply! 
+ID: 1838 Type: KillHandIn Fate: So Sorry, Sokles 
+
+-->	
+
+
+	<!-- Ultima Thule -->
+	<While Condition="&UltimaThule; == 1">
+		<!--<If condition="not AetherCurrentManager.IsZoneComplete(960)">
+			<If condition="not IsOnMap(961)">
+				<TeleportTo AetheryteId="177"/>--> <!-- The Twelve Wonders -->
+			<!-- </If>
+			<Log Message="Starting Ultima Thule Fates without flight support." /> 	
+			<While condition="IsOnMap(961)">
+				<LLFate UseFlight="True" MinProgress="10" MinLevel="0" MaxLevel="91" BlacklistIds="0" while="IsOnMap(961)"/>	
+			</While>
+		</If>-->
+		<If condition="AetherCurrentManager.IsZoneComplete(960)">
+			<If condition="not IsOnMap(960)">
+				<TeleportTo AetheryteId="179"/> <!-- Reah Tahra -->
+			</If>
+			<Log Message="Starting Ultima THule Fates with flight support." /> 	
+			<While condition="IsOnMap(960)">
+				<LLFate UseFlight="True" MinProgress="10" MinLevel="0" MaxLevel="91" BlacklistIds="0" while="IsOnMap(960)"/>	
+			</While>
+		</If>		
+	</While>
+  
+  </Order>
+  <GrindAreas>
+  </GrindAreas>	
+	<CodeChunks>
+  </CodeChunks>
+</Profile>  
